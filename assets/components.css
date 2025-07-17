@@ -1,0 +1,198 @@
+/* .form-select-chosen {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.form-select-chosen__input {
+  display: none;
+}
+
+.form-select-chosen__output-wrap {
+  border: 1px solid;
+}
+
+.form-select-chosen__output-wrap:has(+ .form-select-chosen__search.is-visible) {
+  position: relative;
+  z-index: 3;
+}
+
+.form-select-chosen__output {
+}
+
+.form-select-chosen__output:empty::before {
+  content: attr(data-placeholder);
+  color: #898989;
+}
+
+.form-select-chosen__search {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  border: 1px solid;
+  border-top: none;
+  z-index: 2;
+  background-color: white;
+}
+
+.form-select-chosen__search:not(.is-visible) {
+  display: none;
+}
+
+.form-select-chosen__search-input {
+  border: 1px solid;
+  margin: 0.25rem;
+  outline: none;
+}
+
+.form-select-chosen__options {
+  margin: 0;
+  padding: 0;
+  max-height: 400px;
+  list-style-type: none;
+  overflow: auto;
+}
+
+.form-select-chosen__option {
+}
+*/
+.form-select-chosen {
+  position: relative;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  overflow: visible; 
+  background: #fff;
+}
+
+
+.form-select-chosen__input {
+  display: none;
+}
+
+
+.form-select-chosen__output-wrap {
+  position: relative;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ccc;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.form-select-chosen__arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #888;
+  transition: transform 0.3s ease;
+}
+
+
+.form-select-chosen__output-wrap.is-open .form-select-chosen__arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+
+.form-select-chosen__output::before {
+  content: attr(data-placeholder);
+  color: #888;
+}
+
+
+.form-select-chosen__search {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: none;
+  height: 300px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.form-select-chosen__search.is-visible {
+  display: block;
+}
+
+
+.form-select-chosen__search::before {
+  font-family: "Font Awesome 6 Free"; 
+  content: "\f002";
+  font-weight: 900;
+  position: absolute;
+  left: 20px;
+  top: 22px;
+  font-size: 14px;
+  color: #888;
+  pointer-events: none;
+}
+
+
+.form-select-chosen__search-input {
+  display: block;
+  width: 99%;
+  padding: 14px 14px 14px 30px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin: 7px auto;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+
+.form-select-chosen__options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 250px;
+  overflow-y: auto;  
+}
+
+
+.form-select-chosen__option {
+  padding: 10px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 15px;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+
+.form-select-chosen__option:first-child {
+  border-top: 1px solid #f0f0f0;
+}
+
+
+.form-select-chosen__option:hover {
+  background-color: #f5f5f5;
+}
+
+.form-select-chosen__option.is-selected {
+  background-color: #e0e0e0;
+  font-weight: 600;
+}
+
+
+.form-select-chosen__input.error-class + .form-select-chosen__output-wrap {
+  border: 1px solid red;
+  border-radius: 8px;
+}
+
+.form-select-chosen__output-wrap.error {
+  border-color: red;
+}
